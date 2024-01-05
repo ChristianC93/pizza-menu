@@ -52,6 +52,8 @@ function App() {
     <div className="container">
       <Header />
       <Menu />
+      <Pizza />
+      <Footer />
     </div>
   );
 }
@@ -68,9 +70,9 @@ function Header() {
 
 function Menu() {
   return (
-    <div>
+    <main className="menu">
       <h2>Menu</h2>
-    </div>
+    </main>
   );
 }
 
@@ -80,6 +82,23 @@ function Footer() {
   const closeHour = 22;
 
   const isOpen = hour >= openHour && hour <= closeHour;
+  console.log(isOpen);
+
+  return (
+    <footer className="footer">
+      {new Date().toLocaleTimeString()} We're currently open.
+    </footer>
+  );
+}
+
+function Pizza() {
+  return (
+    <div>
+      <img src="pizzas/spinaci.jpg" alt="Pizza spinaci" />
+      <h3>Pizza Spinaci</h3>
+      <p>Tomato, mozarella, spinach, and ricotta cheese</p>
+    </div>
+  );
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
