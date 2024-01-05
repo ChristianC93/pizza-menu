@@ -51,6 +51,7 @@ function App() {
   return (
     <div>
       <Header />
+      <Menu />
     </div>
   );
 }
@@ -59,6 +60,14 @@ function Header() {
   const style = { color: 'red', fontSize: '48px', textTransform: 'uppercase' };
 
   return <h1 style={style}>Fast React Pizza Co.</h1>;
+}
+
+function Menu() {
+  return (
+    <div>
+      <h2>Menu</h2>
+    </div>
+  );
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
