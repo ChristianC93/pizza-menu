@@ -49,7 +49,7 @@ const pizzaData = [
 
 function App() {
   return (
-    <div>
+    <div className="container">
       <Header />
       <Menu />
     </div>
@@ -59,7 +59,11 @@ function App() {
 function Header() {
   const style = { color: 'red', fontSize: '48px', textTransform: 'uppercase' };
 
-  return <h1 style={style}>Fast React Pizza Co.</h1>;
+  return (
+    <header className="header">
+      <h1 style={style}>Fast React Pizza Co.</h1>
+    </header>
+  );
 }
 
 function Menu() {
@@ -68,6 +72,14 @@ function Menu() {
       <h2>Menu</h2>
     </div>
   );
+}
+
+function Footer() {
+  const hour = new Date().getHours();
+  const openHour = 12;
+  const closeHour = 22;
+
+  const isOpen = hour >= openHour && hour <= closeHour;
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
