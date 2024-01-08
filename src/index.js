@@ -52,7 +52,6 @@ function App() {
     <div className="container">
       <Header />
       <Menu />
-      <Pizza />
       <Footer />
     </div>
   );
@@ -72,7 +71,22 @@ function Menu() {
   return (
     <main className="menu">
       <h2>Menu</h2>
+      <div>
+        {pizzaData.map((pizza) => (
+          <Pizza pizzaObj={pizza} />
+        ))}
+      </div>
     </main>
+  );
+}
+function Pizza({ pizzaObj }) {
+  return (
+    <div className="pizza">
+      <img src={pizzaObj.photoName} alt={pizzaObj.name} />
+      <h3>{pizzaObj.name}</h3>
+      <p>{pizzaObj.ingredients}</p>
+      <span>{pizzaObj.price}</span>
+    </div>
   );
 }
 
@@ -88,16 +102,6 @@ function Footer() {
     <footer className="footer">
       {new Date().toLocaleTimeString()} We're currently open.
     </footer>
-  );
-}
-
-function Pizza() {
-  return (
-    <div>
-      <img src="pizzas/spinaci.jpg" alt="Pizza spinaci" />
-      <h3>Pizza Spinaci</h3>
-      <p>Tomato, mozarella, spinach, and ricotta cheese</p>
-    </div>
   );
 }
 
